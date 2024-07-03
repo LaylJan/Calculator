@@ -6,7 +6,18 @@ function App() {
 
   return (
     <div>
-      <div>Hello calculator</div>
+      <body>
+        <div className="calculator">
+          <div className="num">
+            <button>1</button>
+          </div>
+          <div className="num">2</div>
+          <div className="num">3</div>
+          <div className="num">1</div>
+          <div className="num">2</div>
+          <div className="num">3</div>
+        </div>
+      </body>
     </div>
   );
 }
