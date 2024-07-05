@@ -107,7 +107,7 @@ function App() {
         <div>
           <button
             onClick={() => {
-              window.location.href = "https://github.com/your-repository";
+              window.location.href = "https://github.com/LaylJan/Calculator";
             }}
             className="repo"
           >
