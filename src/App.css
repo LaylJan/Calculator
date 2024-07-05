@@ -1,6 +1,11 @@
 body {
   background-color: aquamarine;
   display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .calculator {
@@ -20,6 +25,8 @@ body {
 .display {
   font-size: 60px;
   font-weight: 700;
+  width: 31vw;
+  text-align: right;
 }
 
 button {
@@ -30,4 +37,10 @@ button {
 
 .size-2 {
   grid-row: span 2;
+}
+
+.repo {
+  display: flex;
+  align-items: center;
+  margin-top: 4%;
 }

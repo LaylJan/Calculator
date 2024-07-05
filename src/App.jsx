@@ -1,9 +1,19 @@
 import { useState } from "react";
 import back from "./assets/back.svg";
+import git from "./assets/github.svg";
 import "./App.css";
 
 function App() {
   const [display, setDisplay] = useState("0");
+
+  const calculate = (expression) => {
+    try {
+      const result = eval(expression);
+      return result.toString();
+    } catch (error) {
+      return "SYNTAX ERROR";
+    }
+  };
 
   const appendToDisplay = (value) => {
     setDisplay((prevDisplay) => {
@@ -12,8 +22,7 @@ function App() {
       if (value === "C") {
         return "0";
       } else if (value === "=") {
-        // Leave it blank for now (you can add your logic here later)
-        return prevDisplay;
+        return calculate(display);
       }
       if (value === "<") {
         return prevDisplay.length > 1 ? prevDisplay.slice(0, -1) : "0";
@@ -30,6 +39,9 @@ function App() {
   return (
     <div>
       <body>
+        <div className="display">
+          <p>{display.split("").join(" ")}</p>
+        </div>
         <div className="calculator">
           <div className="num">
             <button onClick={() => appendToDisplay("7")}>7</button>
@@ -93,7 +105,15 @@ function App() {
           </div>
         </div>
         <div>
-          <p className="display">{display}</p>
+          <button
+            onClick={() => {
+              window.location.href = "https://github.com/your-repository";
+            }}
+            className="repo"
+          >
+            Go to Repository
+            <img src={git} alt="" />
+          </button>
         </div>
       </body>
     </div>
